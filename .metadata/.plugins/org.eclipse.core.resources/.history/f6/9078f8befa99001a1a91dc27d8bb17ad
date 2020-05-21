@@ -1,0 +1,13 @@
+package com.ibm.microservices;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class CurrencyExchangeController {
+	
+	@PostMapping("/currency-exchange/from/{from}/conversionFactor/{conversionFactor}")
+	public void addExchangeValue() {
+		
+	}
+
+}

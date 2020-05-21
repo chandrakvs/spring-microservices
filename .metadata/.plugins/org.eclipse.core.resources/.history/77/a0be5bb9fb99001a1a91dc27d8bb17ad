@@ -1,0 +1,26 @@
+package com.ibm.microservices;
+
+import java.math.BigDecimal;
+
+import org.hibernate.cfg.Environment;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class CurrencyExchangeController {
+	
+	@Autowired
+	private Environment environment;
+	
+	@Autowired
+	private ExchangeValueRepository exchangeValueRepository;
+	
+	@PostMapping("/currency-exchange/from/{from}/conversionFactor/{conversionFactor}")
+	public void addExchangeValue(@PathVariable String from,@PathVariable BigDecimal conversionFactor) {
+		
+		
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.ibm.microservices;
+
+import java.math.BigDecimal;
+
+public class ExchangeValue {
+     private Long id;
+     private BigDecimal currencyFactor;
+     private String From;
+     private String To;
+     private int port;
+      
+      
+}

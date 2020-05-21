@@ -1,0 +1,9 @@
+package com.ibm.microservices;
+
+public class ExchangeValue {
+      Long id;
+      String currenyFactory;
+      String currencyFrom;
+      String currencyTo;
+      
+}

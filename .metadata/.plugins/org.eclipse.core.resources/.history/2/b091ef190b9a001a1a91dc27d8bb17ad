@@ -1,0 +1,12 @@
+package com.ibm.microservices;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+public class CurrencyConversionController {
+
+	@GetMapping("/currency-converter/from/{from}/to/{to}/quantity/{quantity})
+	CurrencyConversionBean convertCurrency(@PathVariable String from,@PathVariable String to,@PathVariable String quantity) {
+		
+	}
+}
