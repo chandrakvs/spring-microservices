@@ -3151,3 +3151,9 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.springfra
 2020-05-26 00:53:33,250 [Worker-123: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2020-05-26 00:53:33,259 [Worker-123: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2020-05-26 00:53:33,267 [Worker-123: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-05-26 00:53:33,267 [Worker-123: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\work\Chandra\MSTrainingAssignmentWorkspace\currency-conversion-service\src\test\resources
+2020-05-26 01:05:37,839 [Worker-126: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-05-26 01:05:37,839 [Worker-126: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-05-26 01:05:37,841 [Worker-126: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-05-26 01:05:37,842 [Worker-126: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-05-26 01:05:37,843 [Worker-126: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\work\Chandra\MSTrainingAssignmentWorkspace\currency-conversion-service\src\test\resources
