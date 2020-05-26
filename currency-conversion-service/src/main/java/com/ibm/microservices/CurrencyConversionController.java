@@ -1,6 +1,7 @@
 package com.ibm.microservices;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @RestController
 public class CurrencyConversionController {
@@ -51,6 +54,7 @@ public class CurrencyConversionController {
 	}
 	
 	@GetMapping("/currency-converter-feign/from/{from}/to/{to}/quantity/{quantity}")
+	@HystrixCommand(fallbackMethod = "convertCurrencyFeign_Fallback")
 	CurrencyConversionBean convertCurrencyFeign(@PathVariable String from,@PathVariable String to,@PathVariable BigDecimal quantity) {
 		
 		CurrencyConversionBean response = proxy.getExchangeValue(from, to);
@@ -59,5 +63,15 @@ public class CurrencyConversionController {
 		
 		return new CurrencyConversionBean(response.getId(),from,to,response.getConversionFactor(),quantity,quantity.multiply(response.getConversionFactor()),response.getPort());
 	}
+	
+	   	@SuppressWarnings("unused")
+	   	CurrencyConversionBean convertCurrencyFeign_Fallback(@PathVariable String from,@PathVariable String to,@PathVariable BigDecimal quantity) {
+	 
+	        logger.info("currency-exchange-service is down!!! fallback route enabled...");
+	 
+	        logger.info("CIRCUIT BREAKER ENABLED!!! No Response From currency-exchange-service at this moment. " +
+	                    " Service will be back shortly - " + new Date());
+	        return new CurrencyConversionBean();
+	    }
 	
 }
